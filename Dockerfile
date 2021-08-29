@@ -11,6 +11,9 @@ RUN apk update \
  && update-ca-certificates
 
 COPY docker-entrypoint.sh /usr/local/bin/
+COPY git-bash-helper.sh /root/
 ENTRYPOINT ["docker-entrypoint.sh"]
+
+RUN source /root/git-bash-helper.sh
 
 CMD [ "node" ]

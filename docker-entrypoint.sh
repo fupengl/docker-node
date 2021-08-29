@@ -1,4 +1,5 @@
 #!/bin/sh
+
 set -e
 
 cp -R /tmp/.ssh /root/.ssh
