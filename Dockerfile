@@ -4,11 +4,13 @@ FROM mhart/alpine-node:14
 RUN apk update \
  && apk upgrade \
  && apk add --no-cache \
+            bash \
             rsync \
             openssh-client \
             git \
             ca-certificates \
- && update-ca-certificates
+ && update-ca-certificates \
+ && npm i pnpm -g
 
 COPY docker-entrypoint.sh /usr/local/bin/
 COPY git-bash-helper.sh /root/
